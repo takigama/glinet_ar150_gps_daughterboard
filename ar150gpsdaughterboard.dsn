@@ -1,0 +1,211 @@
+(pcb "/home/paulr/owncloud.home/Electronics/AR150 GPS DaughterBoard/ar150gpsdaughterboard.dsn"
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "4.0.2+dfsg1-stable")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (rect pcb 118590 -93697.7 150986 -115101)
+    )
+    (via "Via[0-1]_600:400_um")
+    (rule
+      (width 250)
+      (clearance 200.1)
+      (clearance 200.1 (type default_smd))
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component LEDs:LED_0805
+      (place D1 143764 -101981 front 0 (PN LED))
+      (place D2 138557 -105918 front 0 (PN LED))
+    )
+    (component Pin_Headers:Pin_Header_Straight_2x05
+      (place P1 138811 -98806 front 90 (PN CONN_02X05))
+    )
+    (component "TO_SOT_Packages_SMD:SOT-23"
+      (place Q1 138684 -102743 front 90 (PN BSS138))
+    )
+    (component Resistors_SMD:R_0805
+      (place R1 148082 -101981 front 180 (PN R))
+      (place R2 148209 -105664 front 180 (PN R))
+    )
+    (component "MyKiCadLibs:QUECTEL-L80"
+      (place U1 126365 -104901 front 0 (PN "QUECTEL-L80"))
+    )
+  )
+  (library
+    (image LEDs:LED_0805
+      (outline (path signal 150  -1600 -750  1100 -750))
+      (outline (path signal 150  -1600 750  1100 750))
+      (outline (path signal 150  -100 -150  -100 100))
+      (outline (path signal 150  -100 100  -250 -50))
+      (outline (path signal 150  -350 350  -350 -350))
+      (outline (path signal 150  0 0  350 0))
+      (outline (path signal 150  -350 0  0 350))
+      (outline (path signal 150  0 350  0 -350))
+      (outline (path signal 150  0 -350  -350 0))
+      (outline (path signal 50  1900 950  1900 -950))
+      (outline (path signal 50  1900 -950  -1900 -950))
+      (outline (path signal 50  -1900 -950  -1900 950))
+      (outline (path signal 50  -1900 950  1900 950))
+      (pin Rect[T]Pad_1198.88x1198.88_um (rotate 180) 2 1049.02 0)
+      (pin Rect[T]Pad_1198.88x1198.88_um (rotate 180) 1 -1049.02 0)
+    )
+    (image Pin_Headers:Pin_Header_Straight_2x05
+      (outline (path signal 50  -1750 1750  -1750 -11950))
+      (outline (path signal 50  4300 1750  4300 -11950))
+      (outline (path signal 50  -1750 1750  4300 1750))
+      (outline (path signal 50  -1750 -11950  4300 -11950))
+      (outline (path signal 150  3810 1270  3810 -11430))
+      (outline (path signal 150  3810 -11430  -1270 -11430))
+      (outline (path signal 150  -1270 -11430  -1270 -1270))
+      (outline (path signal 150  3810 1270  1270 1270))
+      (outline (path signal 150  0 1550  -1550 1550))
+      (outline (path signal 150  1270 1270  1270 -1270))
+      (outline (path signal 150  1270 -1270  -1270 -1270))
+      (outline (path signal 150  -1550 1550  -1550 0))
+      (pin Rect[A]Pad_1727.2x1727.2_um 1 0 0)
+      (pin Oval[A]Pad_1727.2x1727.2_um 2 2540 0)
+      (pin Oval[A]Pad_1727.2x1727.2_um 3 0 -2540)
+      (pin Oval[A]Pad_1727.2x1727.2_um 4 2540 -2540)
+      (pin Oval[A]Pad_1727.2x1727.2_um 5 0 -5080)
+      (pin Oval[A]Pad_1727.2x1727.2_um 6 2540 -5080)
+      (pin Oval[A]Pad_1727.2x1727.2_um 7 0 -7620)
+      (pin Oval[A]Pad_1727.2x1727.2_um 8 2540 -7620)
+      (pin Oval[A]Pad_1727.2x1727.2_um 9 0 -10160)
+      (pin Oval[A]Pad_1727.2x1727.2_um 10 2540 -10160)
+    )
+    (image "TO_SOT_Packages_SMD:SOT-23"
+      (outline (path signal 50  -1650 1600  1650 1600))
+      (outline (path signal 50  1650 1600  1650 -1600))
+      (outline (path signal 50  1650 -1600  -1650 -1600))
+      (outline (path signal 50  -1650 -1600  -1650 1600))
+      (outline (path signal 150  1299.16 650.24  1250.9 650.24))
+      (outline (path signal 150  -1499.82 -50.8  -1499.82 650.24))
+      (outline (path signal 150  -1499.82 650.24  -1250.9 650.24))
+      (outline (path signal 150  1299.16 650.24  1499.82 650.24))
+      (outline (path signal 150  1499.82 650.24  1499.82 -50.8))
+      (pin Rect[T]Pad_800.1x800.1_um 1 -950 -1000.76)
+      (pin Rect[T]Pad_800.1x800.1_um 2 950 -1000.76)
+      (pin Rect[T]Pad_800.1x800.1_um 3 0 998.22)
+    )
+    (image Resistors_SMD:R_0805
+      (outline (path signal 50  -1600 1000  1600 1000))
+      (outline (path signal 50  -1600 -1000  1600 -1000))
+      (outline (path signal 50  -1600 1000  -1600 -1000))
+      (outline (path signal 50  1600 1000  1600 -1000))
+      (outline (path signal 150  600 -875  -600 -875))
+      (outline (path signal 150  -600 875  600 875))
+      (pin Rect[T]Pad_700x1300_um 1 -950 0)
+      (pin Rect[T]Pad_700x1300_um 2 950 0)
+    )
+    (image "MyKiCadLibs:QUECTEL-L80"
+      (outline (path signal 150  8580 8000  -7500 8000))
+      (outline (path signal 150  8580 -8000  8580 8000))
+      (outline (path signal 150  -7500 -8000  8580 -8000))
+      (outline (path signal 150  -7500 8000  -7500 -8000))
+      (pin Rect[T]Pad_1000x4000_um 6 -6350 8000)
+      (pin Rect[T]Pad_1000x4000_um 5 -3810 8000)
+      (pin Rect[T]Pad_1000x4000_um 4 -1270 8000)
+      (pin Rect[T]Pad_1000x4000_um 3 1270 8000)
+      (pin Rect[T]Pad_1000x4000_um 2 3810 8000)
+      (pin Rect[T]Pad_1000x4000_um 1 6350 8000)
+      (pin Rect[T]Pad_1000x4000_um 7 -6350 -8000)
+      (pin Rect[T]Pad_1000x4000_um 8 -3810 -8000)
+      (pin Rect[T]Pad_1000x4000_um 9 -1270 -8000)
+      (pin Rect[T]Pad_1000x4000_um 10 1288 -8000)
+      (pin Rect[T]Pad_1000x4000_um 11 3810 -8000)
+      (pin Rect[T]Pad_1000x4000_um 12 6350 -8000)
+    )
+    (padstack Oval[A]Pad_1727.2x1727.2_um
+      (shape (path F.Cu 1727.2  0 0  0 0))
+      (shape (path B.Cu 1727.2  0 0  0 0))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_700x1300_um
+      (shape (rect F.Cu -350 -650 350 650))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_800.1x800.1_um
+      (shape (rect F.Cu -400.05 -400.05 400.05 400.05))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_1000x4000_um
+      (shape (rect F.Cu -500 -2000 500 2000))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_1198.88x1198.88_um
+      (shape (rect F.Cu -599.44 -599.44 599.44 599.44))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_1727.2x1727.2_um
+      (shape (rect F.Cu -863.6 -863.6 863.6 863.6))
+      (shape (rect B.Cu -863.6 -863.6 863.6 863.6))
+      (attach off)
+    )
+    (padstack "Via[0-1]_600:400_um"
+      (shape (circle F.Cu 600))
+      (shape (circle B.Cu 600))
+      (attach off)
+    )
+  )
+  (network
+    (net "Net-(D1-Pad2)"
+      (pins D1-2 R1-2)
+    )
+    (net GND
+      (pins D1-1 P1-1 P1-2 P1-7 Q1-2)
+    )
+    (net "Net-(D2-Pad2)"
+      (pins D2-2 R2-2)
+    )
+    (net GP_GND
+      (pins D2-1 Q1-3 U1-3 U1-12)
+    )
+    (net RX
+      (pins P1-3 U1-2)
+    )
+    (net TX
+      (pins P1-5 U1-1)
+    )
+    (net GP_14
+      (pins P1-6 U1-6)
+    )
+    (net +3V3
+      (pins P1-9 R1-1 R2-1 U1-5 U1-4)
+    )
+    (net GP_17
+      (pins P1-10 Q1-1)
+    )
+    (class kicad_default "" +3V3 GND GP_1 GP_14 GP_16 GP_17 GP_GND "Net-(D1-Pad2)"
+      "Net-(D2-Pad2)" "Net-(U1-Pad10)" "Net-(U1-Pad11)" "Net-(U1-Pad7)" "Net-(U1-Pad8)"
+      "Net-(U1-Pad9)" RX TX
+      (circuit
+        (use_via Via[0-1]_600:400_um)
+      )
+      (rule
+        (width 250)
+        (clearance 200.1)
+      )
+    )
+  )
+  (wiring
+  )
+)

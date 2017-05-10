@@ -1,0 +1,291 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:MyConnectors
+LIBS:ar150gpsdaughterboard-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L BSS138 Q1
+U 1 1 59110876
+P 5800 2200
+F 0 "Q1" H 6000 2275 50  0000 L CNN
+F 1 "BSS138" H 6000 2200 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 6000 2125 50  0000 L CIN
+F 3 "" H 5800 2200 50  0000 L CNN
+	1    5800 2200
+	0    1    1    0   
+$EndComp
+$Comp
+L CONN_02X05 P1
+U 1 1 591108C0
+P 3900 2350
+F 0 "P1" H 3900 2650 50  0000 C CNN
+F 1 "CONN_02X05" H 3900 2050 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x05" H 3900 1150 50  0001 C CNN
+F 3 "" H 3900 1150 50  0000 C CNN
+	1    3900 2350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 5911098B
+P 3400 2800
+F 0 "#PWR01" H 3400 2550 50  0001 C CNN
+F 1 "GND" H 3400 2650 50  0000 C CNN
+F 2 "" H 3400 2800 50  0000 C CNN
+F 3 "" H 3400 2800 50  0000 C CNN
+	1    3400 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 2600 3700 2700
+Wire Wire Line
+	3400 2700 4000 2700
+Wire Wire Line
+	3400 2700 3400 2800
+Wire Wire Line
+	4000 2700 4000 2600
+Connection ~ 3700 2700
+Wire Wire Line
+	3700 2100 3700 2000
+Wire Wire Line
+	3700 2000 3550 2000
+Wire Wire Line
+	3550 2000 3550 2700
+Connection ~ 3550 2700
+$Comp
+L +3.3V #PWR02
+U 1 1 591109C2
+P 4200 2750
+F 0 "#PWR02" H 4200 2600 50  0001 C CNN
+F 1 "+3.3V" H 4200 2890 50  0000 C CNN
+F 2 "" H 4200 2750 50  0000 C CNN
+F 3 "" H 4200 2750 50  0000 C CNN
+	1    4200 2750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4100 2600 4100 2750
+Wire Wire Line
+	4100 2750 4200 2750
+Text GLabel 3800 2850 3    60   Input ~ 0
+RX
+Text GLabel 3900 3100 3    60   Input ~ 0
+TX
+NoConn ~ 8150 300 
+Wire Wire Line
+	3800 2600 3800 2850
+Wire Wire Line
+	3900 2600 3900 3100
+Text GLabel 3800 1750 1    60   Input ~ 0
+GP_1
+Text GLabel 3900 1400 1    60   Input ~ 0
+GP_14
+Text GLabel 4000 1750 1    60   Input ~ 0
+GP_16
+Text GLabel 4100 1400 1    60   Input ~ 0
+GP_17
+Wire Wire Line
+	4100 2100 4100 1400
+Wire Wire Line
+	4000 1750 4000 2100
+Wire Wire Line
+	3900 2100 3900 1400
+Wire Wire Line
+	3800 1750 3800 2100
+$Comp
+L LED D1
+U 1 1 59110B72
+P 5850 3050
+F 0 "D1" H 5850 3150 50  0000 C CNN
+F 1 "LED" H 5850 2950 50  0000 C CNN
+F 2 "LEDs:LED_0805" H 5850 3050 50  0001 C CNN
+F 3 "" H 5850 3050 50  0000 C CNN
+	1    5850 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D2
+U 1 1 59110BF4
+P 5850 3600
+F 0 "D2" H 5850 3700 50  0000 C CNN
+F 1 "LED" H 5850 3500 50  0000 C CNN
+F 2 "LEDs:LED_0805" H 5850 3600 50  0001 C CNN
+F 3 "" H 5850 3600 50  0000 C CNN
+	1    5850 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 59110C24
+P 6450 3050
+F 0 "R1" V 6530 3050 50  0000 C CNN
+F 1 "R" V 6450 3050 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805" V 6380 3050 50  0001 C CNN
+F 3 "" H 6450 3050 50  0000 C CNN
+	1    6450 3050
+	0    1    1    0   
+$EndComp
+$Comp
+L R R2
+U 1 1 59110C69
+P 6450 3600
+F 0 "R2" V 6530 3600 50  0000 C CNN
+F 1 "R" V 6450 3600 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805" V 6380 3600 50  0001 C CNN
+F 3 "" H 6450 3600 50  0000 C CNN
+	1    6450 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR03
+U 1 1 59110D10
+P 5500 3050
+F 0 "#PWR03" H 5500 2800 50  0001 C CNN
+F 1 "GND" H 5500 2900 50  0000 C CNN
+F 2 "" H 5500 3050 50  0000 C CNN
+F 3 "" H 5500 3050 50  0000 C CNN
+	1    5500 3050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5650 3050 5500 3050
+Wire Wire Line
+	5650 3600 5500 3600
+Wire Wire Line
+	6300 3600 6050 3600
+Wire Wire Line
+	6300 3050 6050 3050
+$Comp
+L +3.3V #PWR04
+U 1 1 59110E67
+P 6700 2950
+F 0 "#PWR04" H 6700 2800 50  0001 C CNN
+F 1 "+3.3V" H 6700 3090 50  0000 C CNN
+F 2 "" H 6700 2950 50  0000 C CNN
+F 3 "" H 6700 2950 50  0000 C CNN
+	1    6700 2950
+	1    0    0    -1  
+$EndComp
+Text GLabel 5750 1900 1    60   Input ~ 0
+GP_17
+Wire Wire Line
+	5750 1900 5750 2000
+$Comp
+L GND #PWR05
+U 1 1 59110F7C
+P 5500 2350
+F 0 "#PWR05" H 5500 2100 50  0001 C CNN
+F 1 "GND" H 5500 2200 50  0000 C CNN
+F 2 "" H 5500 2350 50  0000 C CNN
+F 3 "" H 5500 2350 50  0000 C CNN
+	1    5500 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 2300 5500 2300
+Wire Wire Line
+	5500 2300 5500 2350
+Text GLabel 6200 2300 2    60   Input ~ 0
+GP_GND
+Wire Wire Line
+	6000 2300 6200 2300
+$Comp
+L QUECTEL-L80 U1
+U 1 1 5911353A
+P 1950 2550
+F 0 "U1" H 1950 2550 60  0000 C CNN
+F 1 "QUECTEL-L80" H 1250 2600 60  0000 C CNN
+F 2 "MyKiCadLibs:QUECTEL-L80" H 1800 2350 60  0001 C CNN
+F 3 "" H 1800 2350 60  0000 C CNN
+	1    1950 2550
+	1    0    0    -1  
+$EndComp
+Text GLabel 2000 1700 1    60   Input ~ 0
+GP_GND
+Text GLabel 2100 1250 1    60   Input ~ 0
+RX
+Text GLabel 2200 1700 1    60   Input ~ 0
+TX
+$Comp
+L +3.3V #PWR06
+U 1 1 591136CE
+P 1900 1250
+F 0 "#PWR06" H 1900 1100 50  0001 C CNN
+F 1 "+3.3V" H 1900 1390 50  0000 C CNN
+F 2 "" H 1900 1250 50  0000 C CNN
+F 3 "" H 1900 1250 50  0000 C CNN
+	1    1900 1250
+	1    0    0    -1  
+$EndComp
+Text GLabel 2200 3350 3    60   Input ~ 0
+GP_GND
+Text GLabel 1700 1700 1    60   Input ~ 0
+GP_14
+Wire Wire Line
+	2000 1700 2000 1950
+Wire Wire Line
+	2100 1950 2100 1250
+Wire Wire Line
+	2200 1700 2200 1950
+Wire Wire Line
+	2200 3150 2200 3350
+Wire Wire Line
+	1700 1700 1700 1950
+Wire Wire Line
+	1900 1250 1900 1950
+Wire Wire Line
+	6700 2950 6700 3600
+Wire Wire Line
+	6700 3600 6600 3600
+Wire Wire Line
+	6600 3050 6700 3050
+Connection ~ 6700 3050
+Text GLabel 5500 3600 0    60   Input ~ 0
+GP_GND
+Wire Wire Line
+	1800 1950 1800 1700
+Wire Wire Line
+	1800 1700 1900 1700
+Connection ~ 1900 1700
+$EndSCHEMATC
