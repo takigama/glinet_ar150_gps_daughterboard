@@ -14,7 +14,7 @@ family (thanks to some code that already supported GPIO's with interrupts)
 and was fairly impressed with the results.
 
 Sadly its hard to get the Neo uBlox 6M in an SMD format, but I stumbled onto
-the Quectel L80 chip, which is easy to aquire and suitably small. The AR150
+the Quectel L80 chip, which is easy to aquire and even smaller than the uBlox. The AR150
 has different GPIO pins to the original GL.inet router I had in my previous
 project (which is still actually running at home and still out-performing
 most other GPS/PPS's i've built).
