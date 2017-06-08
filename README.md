@@ -25,7 +25,7 @@ the first one that I know of that implemented by the gpio interrupt mechanism
 
 ## How?
 
-Well, first go print a board at oshpark [here](https://oshpark.com/shared_projects/nBCIZC4C)
+Well, first go print a board at oshpark [here](https://oshpark.com/shared_projects/Jt3Wxv2q)
 and then go get a Quectel L80 chip (just the chip, no board), a couple of leds
 a small mosfet (dont really need it to be honest) and a few resistors and lastly
 of course a AR150.
@@ -49,3 +49,6 @@ GPIO 14 will be the PPS pin.
 This is very imature - i have no AR150 and the boards arent here from oshpark
 yet, so im not even sure the thing is put together properly. Use at your own
 risk!
+
+I've printed the first iteration and mounted it to the board. Didnt quite
+get all the sizing right, so now there is version 0.1b. Stay tuned
