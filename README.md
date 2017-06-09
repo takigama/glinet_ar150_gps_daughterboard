@@ -50,5 +50,7 @@ This is very imature - i have no AR150 and the boards arent here from oshpark
 yet, so im not even sure the thing is put together properly. Use at your own
 risk!
 
+## Updates
+
 I've printed the first iteration and mounted it to the board. Didnt quite
 get all the sizing right, so now there is version 0.1b. Stay tuned
