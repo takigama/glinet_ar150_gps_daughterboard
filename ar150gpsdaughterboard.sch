@@ -77,22 +77,6 @@ F 3 "" H 3400 2800 50  0000 C CNN
 	1    3400 2800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3700 2600 3700 2700
-Wire Wire Line
-	3400 2700 4000 2700
-Wire Wire Line
-	3400 2700 3400 2800
-Wire Wire Line
-	4000 2700 4000 2600
-Connection ~ 3700 2700
-Wire Wire Line
-	3700 2100 3700 2000
-Wire Wire Line
-	3700 2000 3550 2000
-Wire Wire Line
-	3550 2000 3550 2700
-Connection ~ 3550 2700
 $Comp
 L +3.3V #PWR02
 U 1 1 591109C2
@@ -288,4 +272,30 @@ Wire Wire Line
 Wire Wire Line
 	1800 1700 1900 1700
 Connection ~ 1900 1700
+Wire Wire Line
+	3700 2600 3700 2650
+Wire Wire Line
+	3700 2650 3400 2650
+Wire Wire Line
+	3400 2000 3400 2800
+Wire Wire Line
+	3700 2100 3700 2000
+Wire Wire Line
+	3700 2000 3400 2000
+Connection ~ 3400 2650
+$Comp
+L +5V #PWR?
+U 1 1 5939F455
+P 4100 2950
+F 0 "#PWR?" H 4100 2800 50  0001 C CNN
+F 1 "+5V" H 4100 3090 50  0000 C CNN
+F 2 "" H 4100 2950 50  0000 C CNN
+F 3 "" H 4100 2950 50  0000 C CNN
+	1    4100 2950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4000 2600 4000 2950
+Wire Wire Line
+	4000 2950 4100 2950
 $EndSCHEMATC
