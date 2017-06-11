@@ -11,7 +11,9 @@ uBlox Neo 6m GPS receiver to build a NTP with GPS and PPS for high accuracy
 timing. [See here](http://pjrlost.blogspot.com.au/2015/09/ar9331-pps-gps-ntp-awesome.html)
 I had to write some code to enable PPS interupt based processing on the AR9331
 family (thanks to some code that already supported GPIO's with interrupts)
-and was fairly impressed with the results.
+and was fairly impressed with the results. At home its the prefered clock
+source, going up against a RPI1, RPI2 and a Wyse terminal with a serial port
+which runs an AMD geode cpu.
 
 Sadly its hard to get the Neo uBlox 6M in an SMD format, but I stumbled onto
 the Quectel L80 chip, which is easy to aquire and even smaller than the uBlox. The AR150
