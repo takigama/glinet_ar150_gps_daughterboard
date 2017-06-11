@@ -38,6 +38,19 @@ Also, when i started this, i was thinking along the lines of the PoE version
 of the AR150 (so the AR150 can sit outside in a silicon case with the GPS poking
 upward thru the top - i'll post pic's when I build it)
 
+Dont let the SMD scare you, plenty of youtubes up for how to hand solder or heat
+gun solder this thing. I use a head gun for everything except the GPS module. I
+use a soldering iron for the GPS module.
+
+## BOM
+
+1) 1 x L80 GPS Module or MTK3339 Module
+2) 1 x Mosfet (BSS138 or similar) - optional, allows GPS to be power cycled by board
+3) 3 x 200ohm 0805 SMD resistors
+4) 1 x 2x5 90 degree angled pin header
+5) 3 x 0805 leds (colour is up to you)
+
+
 ## GPIO's
 
 So in the project, its using two GPIO's. One is used to turn the GPS itself on
