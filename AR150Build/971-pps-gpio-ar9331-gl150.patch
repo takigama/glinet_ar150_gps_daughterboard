@@ -1,0 +1,87 @@
+--- a/arch/mips/ath79/mach-gl-ar150.c	2017-06-11 01:38:51.927561965 +1000
++++ b/arch/mips/ath79/mach-gl-ar150.c	2017-06-11 01:40:42.696858344 +1000
+@@ -12,6 +12,23 @@
+ */
+ 
+ #include <linux/gpio.h>
++#include <linux/pps-gpio.h>
++#include <linux/platform_device.h>
++#include <linux/syscore_ops.h>
++#include <linux/interrupt.h>
++#include <linux/amba/bus.h>
++#include <linux/amba/clcd.h>
++#include <linux/clk-provider.h>
++#include <linux/clkdev.h>
++#include <linux/clockchips.h>
++#include <linux/cnt32_to_63.h>
++#include <linux/io.h>
++#include <linux/module.h>
++#include <linux/of_platform.h>
++#include <linux/spi/spi.h>
++#include <linux/w1-gpio.h>
++#include <linux/pps-gpio.h>
++
+ 
+ #include <asm/mach-ath79/ath79.h>
+ 
+@@ -27,6 +44,8 @@
+ #define GL_AR150_GPIO_LED_LAN		   13
+ #define GL_AR150_GPIO_LED_WAN		   15 
+ 
++static int ar150_pps_gpio_pin = 14;
++
+ #define GL_AR150_GPIO_BIN_USB         6
+ #define GL_AR150_GPIO_BTN_MANUAL      7
+ #define GL_AR150_GPIO_BTN_AUTO	   	   8
+@@ -40,6 +59,36 @@
+ #define GL_AR150_CALDATA_OFFSET	0x1000
+ #define GL_AR150_WMAC_MAC_OFFSET	0x0000
+ 
++static struct pps_gpio_platform_data pps_gpio_info = {
++        .assert_falling_edge = false,
++        .capture_clear = false,
++        .gpio_pin = -1,
++        .gpio_label = "PPS",
++};
++
++static struct platform_device pps_gpio_device = {
++        .name = "pps-gpio",
++        .id = PLATFORM_DEVID_NONE,
++        .dev.platform_data = &pps_gpio_info,
++};
++
++
++int __init gl_ar150_register_device(struct platform_device *pdev)
++{
++        int ret;
++
++        ret = platform_device_register(pdev);
++        if (ret)
++                pr_debug("Unable to register platform device '%s': %d\n",
++                         pdev->name, ret);
++
++        return ret;
++}
++
++
++
++
++
+ static struct gpio_led gl_ar150_leds_gpio[] __initdata = {
+ 	{
+ 		.name = "gl_ar150:wlan",
+@@ -118,6 +167,13 @@
+ 	ath79_register_eth(0);
+ 	ath79_register_eth(1);
+ 
++	pr_info("bcm2709: GPIO %d setup as pps-gpio device\n", ar150_pps_gpio_pin);
++	pps_gpio_info.gpio_pin = ar150_pps_gpio_pin;
++	pps_gpio_device.id = ar150_pps_gpio_pin;
++	gl_ar150_register_device(&pps_gpio_device);
++
++
++
+ 	/* register wireless mac with cal data */
+ 	ath79_register_wmac(art + GL_AR150_CALDATA_OFFSET, art + GL_AR150_WMAC_MAC_OFFSET);
+ }
+
