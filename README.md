@@ -46,11 +46,17 @@ GPIO 14 will be the PPS pin.
 
 ## Warning!
 
-This is very imature - i have no AR150 and the boards arent here from oshpark
-yet, so im not even sure the thing is put together properly. Use at your own
-risk!
+This isnt very mature yet. I've tested the L80 board, and have since updated
+its layout. It works ok, though getting the firmware for the AR150 going was
+a tedious excersize.
+
+I have not however tested the MTK3339 based board....
 
 ## Updates
 
 I've printed the first iteration and mounted it to the board. Didnt quite
 get all the sizing right, so now there is version 0.1b. Stay tuned
+
+Added an MTK3339 GPS board layout (same sized footprint as the L80) partly
+because the L80 seems harder to find than the MTK and the performance of the
+L80 hasnt been spectacular so far (in terms of sensitivity).
