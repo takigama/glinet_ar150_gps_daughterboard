@@ -75,3 +75,7 @@ get all the sizing right, so now there is version 0.1b. Stay tuned
 Added an MTK3339 GPS board layout (same sized footprint as the L80) partly
 because the L80 seems harder to find than the MTK and the performance of the
 L80 hasnt been spectacular so far (in terms of sensitivity).
+
+Another thing to note, i've not added a battery backup for the GPS's for
+keeping its data live. This results in some loooong initial startup times
+but, hopefully those occur infrequently!.
