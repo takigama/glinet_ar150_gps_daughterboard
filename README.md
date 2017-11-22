@@ -59,23 +59,20 @@ So in the project, its using two GPIO's. One is used to turn the GPS itself on
 and off. The other is used for the PPS interrupt. GPIO 17 is the power switch
 GPIO 14 will be the PPS pin.
 
-## Warning!
-
-This isnt very mature yet. I've tested the L80 board, and have since updated
-its layout. It works ok, though getting the firmware for the AR150 going was
-a tedious excersize.
-
-I have not however tested the MTK3339 based board....
-
 ## Updates
 
-I've printed the first iteration and mounted it to the board. Didnt quite
-get all the sizing right, so now there is version 0.1b. Stay tuned
+The baords have both beeen tested with fairly good success so far. I would
+slightly recommend the L80 GPS over the MTK3339 GPS module as it seems more
+sensative and less jittery.
 
-Added an MTK3339 GPS board layout (same sized footprint as the L80) partly
-because the L80 seems harder to find than the MTK and the performance of the
-L80 hasnt been spectacular so far (in terms of sensitivity).
+Heres some Pics for you:
 
-Another thing to note, i've not added a battery backup for the GPS's for
-keeping its data live. This results in some loooong initial startup times
-but, hopefully those occur infrequently!.
+L80:
+![L80](https://raw.githubusercontent.com/takigama/glinet_ar150_gps_daughterboard/master/Pictures/L80.jpg)
+
+
+MTK3339:
+![MTK3339](https://raw.githubusercontent.com/takigama/glinet_ar150_gps_daughterboard/master/Pictures/MTK3339.jpg)
+
+Theres no alot to distinguish between the two except they have different footprints
+on the GPS module
