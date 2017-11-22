@@ -1,6 +1,9 @@
 ## What be it?
 
-Simple daughter board for the AR150 from GL.inet using the Quectel L80 GPS
+Simple daughter board for the AR150 from GL.inet using the Quectel L80 GPS or
+the MTK3339 GPS (there are boards for either)
+
+... and its AWESOME!!!!
 
 ## Why?
 
