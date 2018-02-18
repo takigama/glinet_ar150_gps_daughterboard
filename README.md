@@ -5,6 +5,12 @@ the MTK3339 GPS (there are boards for either)
 
 ... and its AWESOME!!!!
 
+... and NOW with added linuxptp AND LEDE support!!!!!
+
+note that it doesnt come configured with much, so most of the daemons included
+(ntp, chrony, etc) start up automatically with defaults, you want to change
+that
+
 ## Why?
 
 meh, why not?
