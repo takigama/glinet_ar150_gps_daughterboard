@@ -37,3 +37,6 @@ echo 1 > /sys/class/gpio/gpio17/value
 /usr/sbin/gpsd -n -G -S 2947 /dev/ttyATH0 >> /tmp/err.log
 
 ```
+
+Note that by default gpio 17 is low, so the gps is switchede off
+by default and we have to turn it on at some point.
