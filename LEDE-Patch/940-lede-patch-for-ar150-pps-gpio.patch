@@ -175,7 +175,7 @@ index 333ad7d..b326c0d 100644
 +		//return -EINVAL;
 +	//}
 +	// VERY NASTY HACK!!!! makes pps-gpio only work for AR150 with gpio pin 14...
-+	data->irq = 65;
++	data->irq = 54;
  
  	/* initialize PPS specific parts of the bookkeeping data structure. */
  	data->info.mode = PPS_CAPTUREASSERT | PPS_OFFSETASSERT |
