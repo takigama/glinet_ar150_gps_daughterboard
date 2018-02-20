@@ -49,11 +49,11 @@ with to use ntpd. Also i disable the firewall - thats up to you to
 decide if you want that or not):
 
 1. disable some daemons
-1.1. /etc/init.d/htpdate disable
-1.2. /etc/init.d/gpsd disable
-1.3. /etc/init.d/firewall disable
-1.4. /etc/init.d/sysntpd disable
-1.5. /etc/init.d/ntpd disable
+--1. /etc/init.d/htpdate disable
+--2. /etc/init.d/gpsd disable
+--3. /etc/init.d/firewall disable
+--4. /etc/init.d/sysntpd disable
+--5. /etc/init.d/ntpd disable
 2. Configure Chrony - see below
 2. Alternatively, configure NTPD, i'll provide one shortly
 3. check pps is living (you should see one of the leds flashing
