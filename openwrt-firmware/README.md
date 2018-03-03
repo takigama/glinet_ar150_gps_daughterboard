@@ -1,139 +1,43 @@
-# New firmware - 18/Feb/2018
+# New firmwares - 3/Mar/2018
 
-This firmware is something of a hack, but is running lede.
+This new firmware is now pretty solid and there are two versions
 
-Has all of the components necessary to support an gps/pps machine
+1. LEDE based (based on lede github master)
+2. openwrt based (comes from openwrt's own master git)
 
-1. ntp
-2. chrony
-3. linuxptp
-4. picocom
-5. a bunch of extra components...
+## Details
 
-This is hardcoded for gps/pps on gpio 14 - also note thata if you
-are using the board from this repo IT WILL BE OFF BY DEFAULT!!!!
-you must turn on gpio 17 for the board to come alive
+There are quite alof ot packages added, which i'll update shortly
+but to install it, upload it to your AR150 (preferably already 
+running openwrt) then run from the shell "sysupgrade -v /tmp/my_firmware_file"
 
-With my startup, i disable most of the ntp clients and start things
-up with /etc/rc.local:
+Once you've done that, its a good idea to blank it when it comes up
+by running "mtd -r erase rootfs_data" (this will reset the router
+back to the golden image and reboot it).
 
-```
-# Put your custom commands here that should be executed once
-# the system init finished. By default this file does nothing.
+On boot it will do a number of things:
 
+1. set WAN interface to DHCP client
+2. set wifi SSID to "OpenWRT" and give the wifi a 192.168.254.1 with dhcp server
+3. set LAN interface to 192.168.253.1 with a dhcp server
+4. enabble gpsd and chrony with two ntp servers on "noselect"
+5. disables firewall!!!!
+6. disables most every other service
+7. disables the serial console
 
-setserial /dev/ttyATH0 low_latency 
-stty -F /dev/ttyATH0 9600 
+The reason we do all that is to remove as much cpu-consuming tasks from
+the router as possible, but it is obviously insecure. If you dont need it
+disable the wifi, but I would leave the firewall off, configure a static
+IP and shutdown the web interface, and the "LAN" interface. On the PoE
+model, the WAN interface is the one that accepts PoE and if your using 
+an outdoor case (coming soon(tm)), you'll only want a single ethernet
+cable coming into the router.
 
-echo 17 > /sys/class/gpio/export
-echo out > /sys/class/gpio/gpio17/direction
-echo 1 > /sys/class/gpio/gpio17/value
+Once its online and you can connect to it (either by plugging LAN into
+your network, connecting to the SSID or connecting to the LAN interface)
+ssh in and run "chronyc sources", it should start syncing. You can also
+make sure gpsd is running correctly with cgps (you should see a 9600 baud
+rate on the serial line)
 
+I'll make the firmwares available soon on github
 
-/bin/ln -s /dev/ttyATH0 /dev/gps0
-/bin/ln -s /dev/pps0 /dev/gpspps0
-# mkdir -p /var/log/ntpstats
-# chown ntp /var/log/ntpstats
-# sleep 5
-# /etc/init.d/ntpd restart
-/usr/sbin/gpsd -n -G -S 2947 /dev/ttyATH0 >> /tmp/err.log
-
-```
-
-Note that by default gpio 17 is low, so the gps is switchede off
-by default and we have to turn it on at some point.
-
-Heres how i set up my routers after the firmware is installed (you
-should disable most of these, and my setup uses chrony where you may
-with to use ntpd. Also i disable the firewall - thats up to you to
-decide if you want that or not):
-
-1. disable some daemons
-  1. /etc/init.d/htpdate disable
-  2. /etc/init.d/gpsd disable
-  3. /etc/init.d/firewall disable
-  4. /etc/init.d/sysntpd disable
-  5. /etc/init.d/ntpd disable
-2. Configure Chrony - see below
-2. Alternatively, configure NTPD, i'll provide one shortly
-3. check pps is living (you should see one of the leds flashing
-on the routers daughter boarrd if it is) with ppstest /dev/pps0
-4. Fix /etc/init.d/rc.local as per above
-5. DISABLE the lan interface bridge (read below)
-6. configure linuxptp (config coming soon)
-
-
-## Chrony Config
-
-### /etc/chrony/chrony.conf  
-```
-# Chrony configuration
-
-# Note: time servers and ntp client access is configured in /etc/config/ntpd 
-# and automatically set at startup
-
-
-# Log clock errors above 0.5 seconds
-logchange 0.5
-
-# Allow command access only from localhost
-cmdallow localhost
-cmddeny
-
-logdir /tmp/
-
-log measurements statistics tracking
-
-
-# Password config for chronyc
-# Note: Using a command key other than "1" will break 
-# /etc/init.d/ntpd and /etc/hotplug.d/iface/20-ntpd
-keyfile /etc/chrony/chrony.keys
-commandkey 1
-
-refclock SHM 0 offset 0.09 refid NMEA noselect
-refclock PPS /dev/pps0 refid PPS lock NMEA
-
-
-allow all
-
-# give yourself a reference to see how your tracking
-server 0.pool.ntp.org noselect 
-server 1.pool.ntp.org noselect
-server 2.pool.ntp.org noselect
-server 3.pool.ntp.org noselect
-
-
-```
-
-## Networking
-
-If you wish to use the linuxptp daemon, you have to disable the network bridge
-
-### /etc/config/network
-
-note that I only use eth0 here, the AR150 (and ar9331 in general) has two ports,
-eth0 which is a standalone phy and eth1 which is a phy connected to the internal
-switch. The AR150 uses PoE on eth0 and eth0 is also a slightly better choice to 
-connect to as it has not switch to introduce latency. We also remove the bridge
-because linuxPTP cannot use the bridge interface
-
-```
-
-config interface 'loopback'
-        option ifname 'lo'
-        option proto 'static'
-        option ipaddr '127.0.0.1'
-        option netmask '255.0.0.0'
-
-config globals 'globals'
-        option ula_prefix 'fd00:a76f:e7bc::/48'
-
-config interface 'lan'
-        option ifname 'eth0'
-        option proto 'dhcp'
-
-
-```
-
-And thats pretty much it for now....
