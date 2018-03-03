@@ -70,6 +70,10 @@ GPIO 14 will be the PPS pin.
 
 ## Updates
 
+3/Mar/2018 - There are now two firmwares sitting in the firmware directory. This
+update moves my repo from its very-alpha state to something I now consider to be
+relatively tested and working fairly stable and as such is now considered beta!
+
 The baords have both beeen tested with fairly good success so far. I would
 slightly recommend the L80 GPS over the MTK3339 GPS module as it seems more
 sensative and less jittery.
