@@ -30,8 +30,8 @@ the router as possible, but it is obviously insecure. If you dont need it
 disable the wifi, but I would leave the firewall off, configure a static
 IP and shutdown the web interface, and the "LAN" interface. On the PoE
 model, the WAN interface is the one that accepts PoE and if your using 
-an outdoor case (coming soon(tm)), you'll only want a single ethernet
-cable coming into the router.
+the 3d printed outdoor case (coming soon(tm)), you'll only want a single
+ethernet cable coming into the router.
 
 Once its online and you can connect to it (either by plugging LAN into
 your network, connecting to the SSID or connecting to the LAN interface)
@@ -50,10 +50,14 @@ and there will be a 0 byte file that it is either "lede" or "operwrt".
 
 ## PTP
 
-This version has full ptp support, but as yet does not actually start the
-ptp daemon. If you wish to test that functionality, justs login to the router
-and run "ptp4l -i eth0 -q -m -A -S" (note that'll tie itself to the console,
-so you'd have to setup ptp after this step if its whats you need.
+This version has full ptp support, and starts the ptp daemon on startup
+with the following parameters:
+
+1. Software clock
+2. Binds to eth0 and eth1
+3. E2E delay
+4. Pri1 and 2 at 128
+5. Domain ID 0
 
 ## NTPD instead of Chrony.
 
