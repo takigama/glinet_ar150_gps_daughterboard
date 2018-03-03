@@ -39,5 +39,24 @@ ssh in and run "chronyc sources", it should start syncing. You can also
 make sure gpsd is running correctly with cgps (you should see a 9600 baud
 rate on the serial line)
 
-I'll make the firmwares available soon on github
+One problem - for some reason after a sysupgrade or mtd erase step the wifi
+does not come back online unless the router is rebooted again. So after
+upgrading and resetting, make sure you reboot if you need wireless!
 
+I'll make the firmwares available soon on githuba
+
+If your not sure which firmware you installed, have a look in /etc/taki
+and there will be a 0 byte file that it is either "lede" or "operwrt".
+
+## PTP
+
+This version has full ptp support, but as yet does not actually start the
+ptp daemon. If you wish to test that functionality, justs login to the router
+and run "ptp4l -i eth0 -q -m -A -S" (note that'll tie itself to the console,
+so you'd have to setup ptp after this step if its whats you need.
+
+## NTPD instead of Chrony.
+
+My firmware defaults to starting up chrony. If you wish to use ntpd instead
+just disable the chrony startup and enable the ntp one. Then configure
+the ntpd.
