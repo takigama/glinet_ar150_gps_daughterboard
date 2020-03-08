@@ -2579,7 +2579,6 @@ CONFIG_PACKAGE_kmod-serial-8250=m
 CONFIG_PACKAGE_kmod-serial-8250-exar=m
 CONFIG_PACKAGE_kmod-softdog=m
 CONFIG_PACKAGE_kmod-ssb=m
-CONFIG_PACKAGE_kmod-thermal=m
 CONFIG_PACKAGE_kmod-tpm=m
 CONFIG_PACKAGE_kmod-tpm-i2c-atmel=m
 CONFIG_PACKAGE_kmod-tpm-i2c-infineon=m
@@ -2751,12 +2750,9 @@ CONFIG_ATH_USER_REGD=y
 # CONFIG_PACKAGE_ATH_DEBUG is not set
 CONFIG_PACKAGE_ATH_DFS=y
 # CONFIG_PACKAGE_ATH_DYNACK is not set
-CONFIG_PACKAGE_kmod-ath10k=m
-CONFIG_ATH10K_LEDS=y
-CONFIG_ATH10K_THERMAL=y
-CONFIG_PACKAGE_kmod-ath10k-ct=m
-CONFIG_ATH10K-CT_LEDS=y
-CONFIG_PACKAGE_kmod-ath10k-ct-smallbuffers=m
+# CONFIG_PACKAGE_kmod-ath10k is not set
+# CONFIG_PACKAGE_kmod-ath10k-ct is not set
+# CONFIG_PACKAGE_kmod-ath10k-ct-smallbuffers is not set
 CONFIG_PACKAGE_kmod-ath5k=m
 CONFIG_PACKAGE_kmod-ath6kl=m
 CONFIG_PACKAGE_kmod-ath6kl-sdio=m
@@ -7769,13 +7765,8 @@ CONFIG_PACKAGE_shorewall-core=m
 CONFIG_PACKAGE_shorewall-lite=m
 CONFIG_PACKAGE_shorewall6=m
 CONFIG_PACKAGE_shorewall6-lite=m
-CONFIG_PACKAGE_snort=m
-
-#
-# Configuration
-#
-# CONFIG_SNORT_LZMA is not set
-CONFIG_PACKAGE_snort3=m
+# CONFIG_PACKAGE_snort is not set
+# CONFIG_PACKAGE_snort3 is not set
 
 #
 # Firewall Tunnel
@@ -7869,7 +7860,7 @@ CONFIG_PACKAGE_dnscrypt-proxy=m
 #
 # CONFIG_DNSCRYPT_ENABLE_PLUGINS is not set
 CONFIG_PACKAGE_dnscrypt-proxy-resolvers=m
-CONFIG_PACKAGE_dnsdist=m
+# CONFIG_PACKAGE_dnsdist is not set
 
 #
 # SSL support
@@ -8361,106 +8352,12 @@ CONFIG_PACKAGE_softethervpn5-client=m
 CONFIG_PACKAGE_softethervpn5-libs=m
 CONFIG_PACKAGE_softethervpn5-server=m
 CONFIG_PACKAGE_sstp-client=m
-CONFIG_PACKAGE_strongswan=m
-
-#
-# Configuration
-#
-CONFIG_STRONGSWAN_ROUTING_TABLE="220"
-CONFIG_STRONGSWAN_ROUTING_TABLE_PRIO="220"
-
-#
-# Packages
-#
-# CONFIG_PACKAGE_strongswan-charon is not set
-# CONFIG_PACKAGE_strongswan-charon-cmd is not set
-# CONFIG_PACKAGE_strongswan-default is not set
-# CONFIG_PACKAGE_strongswan-ipsec is not set
-# CONFIG_PACKAGE_strongswan-isakmp is not set
-# CONFIG_PACKAGE_strongswan-libtls is not set
-# CONFIG_PACKAGE_strongswan-minimal is not set
-# CONFIG_PACKAGE_strongswan-mod-addrblock is not set
-# CONFIG_PACKAGE_strongswan-mod-aes is not set
-# CONFIG_PACKAGE_strongswan-mod-af-alg is not set
-# CONFIG_PACKAGE_strongswan-mod-agent is not set
-# CONFIG_PACKAGE_strongswan-mod-attr is not set
-# CONFIG_PACKAGE_strongswan-mod-attr-sql is not set
-# CONFIG_PACKAGE_strongswan-mod-blowfish is not set
-# CONFIG_PACKAGE_strongswan-mod-ccm is not set
-# CONFIG_PACKAGE_strongswan-mod-cmac is not set
-# CONFIG_PACKAGE_strongswan-mod-connmark is not set
-# CONFIG_PACKAGE_strongswan-mod-constraints is not set
-# CONFIG_PACKAGE_strongswan-mod-coupling is not set
-# CONFIG_PACKAGE_strongswan-mod-ctr is not set
-# CONFIG_PACKAGE_strongswan-mod-curl is not set
-# CONFIG_PACKAGE_strongswan-mod-curve25519 is not set
-# CONFIG_PACKAGE_strongswan-mod-des is not set
-# CONFIG_PACKAGE_strongswan-mod-dhcp is not set
-# CONFIG_PACKAGE_strongswan-mod-dnskey is not set
-# CONFIG_PACKAGE_strongswan-mod-duplicheck is not set
-# CONFIG_PACKAGE_strongswan-mod-eap-identity is not set
-# CONFIG_PACKAGE_strongswan-mod-eap-md5 is not set
-# CONFIG_PACKAGE_strongswan-mod-eap-mschapv2 is not set
-# CONFIG_PACKAGE_strongswan-mod-eap-radius is not set
-# CONFIG_PACKAGE_strongswan-mod-eap-tls is not set
-# CONFIG_PACKAGE_strongswan-mod-farp is not set
-# CONFIG_PACKAGE_strongswan-mod-fips-prf is not set
-# CONFIG_PACKAGE_strongswan-mod-forecast is not set
-# CONFIG_PACKAGE_strongswan-mod-gcm is not set
-# CONFIG_PACKAGE_strongswan-mod-gcrypt is not set
-# CONFIG_PACKAGE_strongswan-mod-gmp is not set
-# CONFIG_PACKAGE_strongswan-mod-gmpdh is not set
-# CONFIG_PACKAGE_strongswan-mod-ha is not set
-# CONFIG_PACKAGE_strongswan-mod-hmac is not set
-# CONFIG_PACKAGE_strongswan-mod-kernel-libipsec is not set
-# CONFIG_PACKAGE_strongswan-mod-kernel-netlink is not set
-# CONFIG_PACKAGE_strongswan-mod-ldap is not set
-# CONFIG_PACKAGE_strongswan-mod-led is not set
-# CONFIG_PACKAGE_strongswan-mod-load-tester is not set
-# CONFIG_PACKAGE_strongswan-mod-md4 is not set
-# CONFIG_PACKAGE_strongswan-mod-md5 is not set
-# CONFIG_PACKAGE_strongswan-mod-mysql is not set
-# CONFIG_PACKAGE_strongswan-mod-nonce is not set
-# CONFIG_PACKAGE_strongswan-mod-openssl is not set
-# CONFIG_PACKAGE_strongswan-mod-pem is not set
-# CONFIG_PACKAGE_strongswan-mod-pgp is not set
-# CONFIG_PACKAGE_strongswan-mod-pkcs1 is not set
-# CONFIG_PACKAGE_strongswan-mod-pkcs11 is not set
-# CONFIG_PACKAGE_strongswan-mod-pkcs12 is not set
-# CONFIG_PACKAGE_strongswan-mod-pkcs7 is not set
-# CONFIG_PACKAGE_strongswan-mod-pkcs8 is not set
-# CONFIG_PACKAGE_strongswan-mod-pubkey is not set
-# CONFIG_PACKAGE_strongswan-mod-random is not set
-# CONFIG_PACKAGE_strongswan-mod-rc2 is not set
-# CONFIG_PACKAGE_strongswan-mod-resolve is not set
-# CONFIG_PACKAGE_strongswan-mod-revocation is not set
-# CONFIG_PACKAGE_strongswan-mod-sha1 is not set
-# CONFIG_PACKAGE_strongswan-mod-sha2 is not set
-# CONFIG_PACKAGE_strongswan-mod-smp is not set
-# CONFIG_PACKAGE_strongswan-mod-socket-default is not set
-# CONFIG_PACKAGE_strongswan-mod-socket-dynamic is not set
-# CONFIG_PACKAGE_strongswan-mod-sql is not set
-# CONFIG_PACKAGE_strongswan-mod-sqlite is not set
-# CONFIG_PACKAGE_strongswan-mod-sshkey is not set
-# CONFIG_PACKAGE_strongswan-mod-stroke is not set
-# CONFIG_PACKAGE_strongswan-mod-test-vectors is not set
-# CONFIG_PACKAGE_strongswan-mod-uci is not set
-# CONFIG_PACKAGE_strongswan-mod-unity is not set
-# CONFIG_PACKAGE_strongswan-mod-updown is not set
-# CONFIG_PACKAGE_strongswan-mod-vici is not set
-# CONFIG_PACKAGE_strongswan-mod-whitelist is not set
-# CONFIG_PACKAGE_strongswan-mod-x509 is not set
-# CONFIG_PACKAGE_strongswan-mod-xauth-eap is not set
-# CONFIG_PACKAGE_strongswan-mod-xauth-generic is not set
-# CONFIG_PACKAGE_strongswan-mod-xcbc is not set
-# CONFIG_PACKAGE_strongswan-pki is not set
-# CONFIG_PACKAGE_strongswan-scepclient is not set
-# CONFIG_PACKAGE_strongswan-swanctl is not set
+# CONFIG_PACKAGE_strongswan is not set
 CONFIG_PACKAGE_tinc=m
-CONFIG_PACKAGE_uanytun=m
-CONFIG_PACKAGE_uanytun-nettle=m
-CONFIG_PACKAGE_uanytun-nocrypt=m
-CONFIG_PACKAGE_uanytun-sslcrypt=m
+# CONFIG_PACKAGE_uanytun is not set
+# CONFIG_PACKAGE_uanytun-nettle is not set
+# CONFIG_PACKAGE_uanytun-nocrypt is not set
+# CONFIG_PACKAGE_uanytun-sslcrypt is not set
 CONFIG_PACKAGE_vpnc=m
 
 #
@@ -8754,7 +8651,7 @@ CONFIG_PACKAGE_kismet-drone=m
 CONFIG_PACKAGE_kismet-server=m
 CONFIG_PACKAGE_pixiewps=m
 CONFIG_PACKAGE_reaver=m
-CONFIG_PACKAGE_wavemon=m
+# CONFIG_PACKAGE_wavemon is not set
 CONFIG_PACKAGE_wifischedule=m
 CONFIG_PACKAGE_464xlat=m
 CONFIG_PACKAGE_6in4=m
@@ -9322,11 +9219,11 @@ CONFIG_PACKAGE_jupp=m
 CONFIG_PACKAGE_jupp-data=m
 CONFIG_PACKAGE_mg=m
 CONFIG_PACKAGE_nano=y
-CONFIG_PACKAGE_vim=m
-CONFIG_PACKAGE_vim-full=y
-CONFIG_PACKAGE_vim-fuller=m
-CONFIG_PACKAGE_vim-help=m
-CONFIG_PACKAGE_vim-runtime=m
+CONFIG_PACKAGE_vim=y
+# CONFIG_PACKAGE_vim-full is not set
+# CONFIG_PACKAGE_vim-fuller is not set
+# CONFIG_PACKAGE_vim-help is not set
+# CONFIG_PACKAGE_vim-runtime is not set
 CONFIG_PACKAGE_zile=m
 
 #

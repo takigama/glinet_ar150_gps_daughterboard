@@ -1,0 +1,24 @@
+Package: gsm-utils
+Version: 1.10-20140304-2
+Depends: libc, gsmlib
+License: LGPL-2.1+
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 37333
+Filename: gsm-utils_1.10-20140304-2_mips_24kc.ipk
+Size: 37891
+SHA256sum: cb1c64a47b01b2e0f7b2f15c8f6d82bf7ded3b24e1c088aa56421edc822fb70b
+Description:  Some simple command line programs to access GSM mobile phones via GSM modems.
+
+Package: gsmlib
+Version: 1.10-20140304-2
+Depends: libc, uclibcxx
+License: LGPL-2.1+
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 111466
+Filename: gsmlib_1.10-20140304-2_mips_24kc.ipk
+Size: 112272
+SHA256sum: bedabe44b259c98021e3a63a40a26077c1750696ab197f04f5d810c2ef884444
+Description:  A library to access GSM mobile phones via GSM modems.
+
