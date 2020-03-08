@@ -1,3 +1,22 @@
+## Update - 2020, Mar 9
+
+I've been running my little guys for 3 years now. I have two in outdoor cases
+being powered over ethernet and they have yet to skip a beat, which is suprising.
+As some of you may know, Australia (especially NSW) has been going through
+some hard times this summer. First it was an amazing heatwave followed by fire
+Then it was floods and intense rain. They endured both. Going up against two
+RPI's (both RPI's died in the heat), thats doing pretty well.
+
+I've now added a 2020 firmware release which is based on 19.07.2. This time
+i've included all the packages as well and made as many modules as would
+compile. If you do need any extra modules, they should now already be available
+
+I've not chaned the firmware to point here for packages however, so you need
+to grab them manually.
+
+I also plan on publishing a build guide for the external cases, hopefully
+some time soon.
+
 ## What be it?
 
 Simple daughter board for the AR150 from GL.inet using the Quectel L80 GPS or
